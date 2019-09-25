@@ -22,18 +22,25 @@ namespace Drawing
             this._size = size;
         }
 
-        public void SetLocation(int xCoord, int yCoord)
+        public int X
         {
-            this._x = xCoord;
-            this._y = yCoord;
+            get => this._x;
+            set => this._x = value;
         }
-
-        public void SetColor(Color color)
+        public int Y
         {
-            if(this.shape!=null)
+            get => this._y;
+            set => this._y = value;
+        }
+        public Color Color
+        {
+            set
             {
-                SolidColorBrush brush = new SolidColorBrush(color);
-                this.shape.Fill = brush;
+                if(this.shape!=null)
+                {
+                    SolidColorBrush brush = new SolidColorBrush(value);
+                    this.shape.Fill = brush;
+                }
             }
         }
 
